@@ -22,4 +22,7 @@ protected:
     void processNextStorage(MutableColumns & columns, const StoragesInfo & info, bool has_state_column) override;
 };
 
+std::shared_ptr<IStorage>
+createDetachedPartsTable();
+
 }

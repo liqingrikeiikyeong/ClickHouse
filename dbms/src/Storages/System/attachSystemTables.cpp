@@ -64,6 +64,7 @@ void attachSystemTablesServer(IDatabase & system_database, bool has_zookeeper)
 {
     attachSystemTablesLocal(system_database);
     system_database.attachTable("parts", StorageSystemParts::create("parts"));
+    system_database.attachTable("detached_parts", createDetachedPartsTable());
     system_database.attachTable("parts_columns", StorageSystemPartsColumns::create("parts_columns"));
     system_database.attachTable("processes", StorageSystemProcesses::create("processes"));
     system_database.attachTable("metrics", StorageSystemMetrics::create("metrics"));
